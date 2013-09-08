@@ -1,0 +1,17 @@
+{
+  "name": "node-megaphone",
+  "version": "0.0.1",
+  "description":"Megaphone made in node",
+  "author": "Michael Mattheakis",
+  "dependencies": {
+    "express": ">= 0.0.0",
+    "ejs": ">= 0.0.0",
+    "socket.io": ">= 0.0.0",
+    "request": ">= 0.0.0",
+    "stylus": ">= 0.0.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  }
+}

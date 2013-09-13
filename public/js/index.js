@@ -1,5 +1,12 @@
-$("#record").mousedown(function() {
-	console.log("mouse is down");
-});
+if (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
+ 	alert("we have audio!");
 
-console.log($("#record")[0]);
+var context = new window.webkitAudioContext();
+navigator.webkitGetUserMedia({audio: true}, function(stream) {
+  var microphone = context.createMediaStreamSource(stream);
+  var filter = context.createBiquadFilter();
+  microphone.connect(filter);
+  filter.connect(context.destination);
+}, function() {
+	alert("failed to connect");
+});

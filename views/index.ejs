@@ -16,7 +16,7 @@
     <!-- <audio src="/audio/blood.mp3" autoplay preload="auto">
     </audio> -->
 
-    <form action="/getaudio" method="post" >
+    <form action="/getaudio" method="post" enctype="multipart/form-data" name="files">
       <input type="file" name="audio_file" id="audio_file">
       <input type="text" name="blob" value="hi there">
       <input type="submit" class="btn btn-primary" value="Submit File">

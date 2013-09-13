@@ -34,16 +34,16 @@ app.get('/', function(req,res) {
 });
 
 app.post('/getaudio',function(req,res) {
-  console.log(typeof req.body.audio_file);
-  // fs.readFile(req.body.audio_file,function(err,data) {
-  //   var newPath = __dirname+'/uploads/audio';
-  //   fs.writeFile(newPath, data, function(err) {
-  //     if(err)
-  //       console.log("error: "+err);
-  //     if(!err)
-  //       console.log("uploaded!");
-  //   });
-  // });
+  console.log(req.files);
+  fs.readFile(req.files.audio_file.path,function(err,data) {
+    var newPath = __dirname+'/uploads/'+req.files.audio_file.name;
+    fs.writeFile(newPath, data, function(err) {
+      if(err)
+        console.log("error: "+err);
+      if(!err)
+        console.log("uploaded!");
+    });
+  });
   res.send('request received');
 });
 
